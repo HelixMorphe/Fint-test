@@ -29,7 +29,7 @@ const FormContainer = styled.div`
   flex: 1;
 `;
 
-export const InputSection = ({ referredBy }) => {
+export const InputSection = ({ sliderInput }) => {
   return (
     <Container>
       <Wrapper>
@@ -38,7 +38,7 @@ export const InputSection = ({ referredBy }) => {
           your goal efficiently for <Span>Free!</Span>
         </Title>
         <FormContainer>
-          <FormInput />
+          <FormInput sliderInput={sliderInput} />
         </FormContainer>
       </Wrapper>
     </Container>

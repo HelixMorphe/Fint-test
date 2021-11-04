@@ -1,5 +1,5 @@
-import { Slider } from "@mui/material";
-import React from "react";
+import Slider from "react-input-slider";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 const Container = styled.div`
@@ -58,18 +58,25 @@ const Button = styled.button`
   /* border: 2px solid black; */
 `;
 
-const FormSection = () => {
-  const [inputs, setInputs] = useState({});
-  const [sliderInput, setSliderInput] = useState("");
+const FormSection = ({ setSliderInput }) => {
+  const [firstInput, setFirstInput] = useState({ x: 10 });
+  const [secondInput, setSecondInput] = useState({ x: 10 });
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  // const handleChange = (e) => {
+  //   var { name, value } = e.target;
+  //   setInputs({
+  //     ...inputs,
+  //     [name]: value,
+  //   });
+  // };
+
+  const pushValues = () => {
+    setSliderInput({ firstInput, secondInput });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    pushValues();
   };
 
   return (
@@ -81,30 +88,30 @@ const FormSection = () => {
             <OptionsContainer>
               <Option>
                 <Label>How much are you willing to spend?</Label>
+                {firstInput.x}
                 <Slider
-                  size="small"
-                  defaultValue={200}
-                  aria-label="Small"
-                  valueLabelDisplay="auto"
-                  min={100}
-                  max={1000}
+                  axis="x"
+                  x={firstInput.x}
+                  onChange={({ x }) =>
+                    setFirstInput((state) => ({ ...state, x }))
+                  }
                 />
               </Option>
               <Line />
               <Option>
                 <Label>How much are you willing to spend?</Label>
+                {secondInput.x}
                 <Slider
-                  size="small"
-                  defaultValue={200}
-                  aria-label="Small"
-                  valueLabelDisplay="auto"
-                  min={100}
-                  max={1000}
+                  axis="x"
+                  x={secondInput.x}
+                  onChange={({ x }) =>
+                    setSecondInput((state) => ({ ...state, x }))
+                  }
                 />
               </Option>
             </OptionsContainer>
           </FormContainer>
-          <Button>Predict</Button>
+          <Input type="submit" placeholder="OKAY" />
         </Form>
       </Wrapper>
     </Container>

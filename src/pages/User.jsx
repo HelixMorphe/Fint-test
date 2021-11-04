@@ -1,8 +1,32 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-const User = () => {
-  let params = useParams();
-  return <h2>Invoice: {params.userId}</h2>;
+import styled from "styled-components";
+import LeaderBoard from "../components/Leaderboard";
+const Container = styled.div`
+  background: linear-gradient(to bottom right, #49dd81, #07b0cb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Title = styled.h1``;
+const Wrapper = styled.div`
+  width: 90%;
+  max-width: 1500px;
+`;
+const UserPage = () => {
+  return (
+    <Container>
+      <Wrapper>
+        <Title>
+          Thank you for becoming a part of #FintFamily😀. At Fint, we believe in
+          co-creating the investment experience.
+          <br />
+          Invite your friends to join and earn exclusive FINT coins.
+        </Title>
+        <LeaderBoard />
+      </Wrapper>
+    </Container>
+  );
 };
 
-export default User;
+export default UserPage;

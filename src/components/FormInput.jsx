@@ -30,21 +30,20 @@ const Input = styled.input`
   outline: none;
 `;
 
-const FormInput = () => {
+const FormInput = ({ sliderInput }) => {
   let navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
   const referredBy = searchParams.get("referredBy");
-  console.log(referredBy);
-  const initialFieldValues = {
+
+  var initialFieldValues = {
     fullName: "",
     email: "",
-    referredBy: "",
     mobileNumber: "",
+    sliderInput: {},
     referrals: [""],
+    referCount: 0,
   };
   var [values, setValues] = useState(initialFieldValues);
-  const [user, setUser] = useState([]);
-  const [users, setUsers] = useState([]);
 
   const usersCollectionRef = collection(db, "users");
   const handleInputChange = (e) => {
@@ -73,24 +72,24 @@ const FormInput = () => {
 
   //get Users
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getUsers();
-  }, []);
   //update refer
 
   const updateRef = async () => {
     const refDoc = doc(db, "users", referredBy);
-    const newFields = {
-      referrals: arrayUnion(values.mobileNumber),
-    };
-    await updateDoc(refDoc, newFields);
+
+    const referredByUser = await getDoc(refDoc);
+
+    if (referredByUser.exists()) {
+      const newFields = {
+        referrals: arrayUnion(values.mobileNumber),
+        referCount: (referredByUser.data().referCount || 0) + 1,
+      };
+      await updateDoc(refDoc, newFields);
+    }
   };
 
   const check = async () => {
+    // console.log(sliderInput);
     const docRef = doc(db, "users", values.mobileNumber);
     const findCurrentUser = await getDoc(docRef);
     if (!findCurrentUser.exists()) {
@@ -104,6 +103,7 @@ const FormInput = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    values.sliderInput = { sliderInput };
     check();
   };
   return (
