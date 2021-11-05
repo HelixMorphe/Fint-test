@@ -19,7 +19,7 @@ const Container = styled.div`
   margin: auto;
   background-color: white;
   border-radius: 1rem;
-  padding: 3rem;
+  padding: 2rem;
 `;
 const Form = styled.form`
   display: flex;
@@ -27,10 +27,24 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
+  margin: auto;
+  width: 80%;
+  max-width: 300px;
+  padding: 10px 15px;
+  outline: none;
+  margin-top: 0.625rem;
+
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+`;
+const InputButton = styled.input`
+  margin: auto;
+  width: 50%;
   outline: none;
   margin-top: 0.625rem;
   padding: 10px 15px;
-  border: 1px solid gray;
+  background-color: rgba(204, 67, 237, 0.3);
+  border: none;
   border-radius: 0.5rem;
 `;
 
@@ -107,6 +121,7 @@ const FormInput = ({ sliderInput }) => {
           value={values.fullName}
           onChange={handleInputChange}
           autoComplete={0}
+          required
         />
         <Input
           placeholder="Email"
@@ -114,6 +129,7 @@ const FormInput = ({ sliderInput }) => {
           value={values.email}
           onChange={handleInputChange}
           autoComplete={0}
+          required
         />
         <Input
           placeholder="Mobile Number"
@@ -121,8 +137,9 @@ const FormInput = ({ sliderInput }) => {
           value={values.mobileNumber}
           onChange={handleInputChange}
           autoComplete={0}
+          required
         />
-        <Input type="submit" value="Save" />
+        <InputButton type="submit" value="Save" />
       </Form>
     </Container>
   );

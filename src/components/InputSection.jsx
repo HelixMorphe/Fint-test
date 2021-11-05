@@ -10,26 +10,43 @@ const Container = styled.div`
   align-items: center;
 `;
 const Wrapper = styled.div`
+  width: 95%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${devices.m} {
+    flex-direction: row;
+  }
 `;
 const Title = styled.h3`
   font-size: 1.5rem;
+
   /* font-size: 2rem; */
   text-align: center;
   color: #ffe8cd;
   flex: 1;
+  @media ${devices.m} {
+    font-size: 2rem;
+    text-align: left;
+  }
 `;
 const Span = styled.span`
   font-size: 1.75rem;
+  @media ${devices.m} {
+    font-size: 2.5rem;
+  }
   /* font-size: 2.5rem; */
   /* color: #e59866; */
 `;
 const FormContainer = styled.div`
   flex: 1;
   width: 100%;
+  margin-top: 2rem;
+
+  @media ${devices.m} {
+    margin-top: 0;
+  }
 `;
 
 export const InputSection = ({ sliderInput }) => {
