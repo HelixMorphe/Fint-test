@@ -75,17 +75,14 @@ const LeaderBoard2 = () => {
     findUser();
   }, []);
 
-  const q1 = query(
-    usersCollectionRef,
-    orderBy("referCount", "desc"),
-    limit(10)
-  );
+  const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
   const [leadersValue, leadersLoading, leadersError] = useCollection(q1, {});
+
   return (
     <Container>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
-        leadersValue.docs.map((doc, index) => (
+        leadersValue.docs.slice(0, 10).map((doc, index) => (
           <Rank key={doc.id}>
             <Index>{index + 1}</Index>
             <Name>{doc.data().fullName}</Name>

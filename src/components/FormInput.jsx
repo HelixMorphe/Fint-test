@@ -14,11 +14,12 @@ import {
 } from "firebase/firestore";
 
 const Container = styled.div`
-  width: 60%;
+  width: 70%;
+  max-width: 500px;
   margin: auto;
   background-color: white;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 3rem;
 `;
 const Form = styled.form`
   display: flex;
@@ -26,8 +27,11 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  padding: 0.625rem;
   outline: none;
+  margin-top: 0.625rem;
+  padding: 10px 15px;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
 `;
 
 const FormInput = ({ sliderInput }) => {
@@ -53,18 +57,6 @@ const FormInput = ({ sliderInput }) => {
       [name]: value,
     });
   };
-
-  //Inputs stored in Values
-
-  //create a user
-  //   const findUser = async () => {
-  //     const docRef = doc(db, "users", "8vXVXD2f31U3sirckP9Y");
-  //     const data = await getDoc(docRef);
-
-  //     console.log(data.exists());
-  //   };
-
-  //Create a User
 
   const createUser = async () => {
     await setDoc(doc(usersCollectionRef, values.mobileNumber), values);

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import devices from "../breakpoints";
 import { HeroImage } from "../data";
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background: #00b4db;
   background: linear-gradient(to bottom, #ea6753, #fd9464);
   background: -webkit-linear-gradient(to bottom, #ea6753, #fd9464);
@@ -12,23 +13,51 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 const Wrapper = styled.div`
-  width: 95%;
-  max-width: 1250px;
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-top: 6rem;
+  @media ${devices.m} {
+    flex-direction: row;
+    padding-top: 0;
+  }
 `;
 const Hero = styled.div`
   color: #fadeac;
   flex: 1;
 `;
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 1.75rem;
+  text-align: center;
+  @media ${devices.m} {
+    font-size: 3rem;
+    text-align: left;
+  }
+  /* font-size: 3rem; */
 `;
 const SubTitle = styled.p`
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  @media ${devices.m} {
+    text-align: left;
+  }
+`;
+const ButtonContainer = styled.div`
+  padding: 1rem;
+  /* border: 2px solid white; */
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  @media ${devices.m} {
+    justify-content: flex-start;
+    padding: 0;
+  }
 `;
 const Button = styled.a`
   padding: 1rem 1.75rem;
@@ -38,12 +67,15 @@ const Button = styled.a`
   border-radius: 5px;
   transition: all 0.2s ease-in;
   outline: none;
+  text-decoration: none;
   background: black;
   color: white;
-  &:hover {
-    background-color: white;
-    color: black;
-    cursor: pointer;
+  @media ${devices.m} {
+    &:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
   }
 `;
 const HeroPoster = styled.form`
@@ -54,7 +86,11 @@ const HeroPoster = styled.form`
 `;
 
 const Img = styled.img`
-  width: 400px;
+  width: 200px;
+
+  @media ${devices.m} {
+    width: 400px;
+  }
 `;
 
 const Section = () => {
@@ -70,7 +106,9 @@ const Section = () => {
             We not only smartly allocate your capital- we co-create seamless
             investing experience. Crush your financial goals with us.
           </SubTitle>
-          <Button href="#form-section">Join Us</Button>
+          <ButtonContainer>
+            <Button href="#form-section">Join Us</Button>
+          </ButtonContainer>
         </Hero>
       </Wrapper>
     </Container>
