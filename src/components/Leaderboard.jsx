@@ -17,24 +17,41 @@ import { useParams } from "react-router-dom";
 
 const Container = styled.div`
   border-radius: 1rem;
-  background: linear-gradient(to right, #d044ef, #9c35eb);
   padding: 3rem;
   width: 80%;
   margin: auto;
 `;
 const Title = styled.h1`
   text-align: center;
+  color: white;
+  background: skyblue;
+  padding: 2rem 0;
+`;
+const SubHeadings = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+const SubHeading = styled.p`
+  text-align: center;
+  flex: 1;
+  padding: 1rem 0;
+  background: white;
+  color: black;
+  border-bottom: 1px solid black;
 `;
 
 const Rank = styled.div`
   /* border: 1px solid black; */
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   display: flex;
+  border-bottom: 1px lightslategray solid;
   justify-content: space-around;
   padding: 1rem;
-  width: 70%;
+
   margin: auto;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   background: white;
 `;
 const MyRank = styled.div`
@@ -80,6 +97,12 @@ const LeaderBoard2 = () => {
 
   return (
     <Container>
+      <Title>LEADERBOARD</Title>
+      <SubHeadings>
+        <SubHeading>Rank</SubHeading>
+        <SubHeading>Name</SubHeading>
+        <SubHeading>Points</SubHeading>
+      </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
         leadersValue.docs.slice(0, 10).map((doc, index) => (

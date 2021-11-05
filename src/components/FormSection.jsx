@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import devices from "../breakpoints";
+import CarouselWrapper from "./Carousel";
 const Container = styled.div`
   min-height: 100vh;
   padding: 0 0.75rem;
@@ -16,6 +17,13 @@ const Container = styled.div`
   color: black;
 `;
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const CarouselContainer = styled.div`
+  width: 100%;
+`;
+const FormWrapper = styled.div`
   height: 70vh;
   margin: auto;
   /* width: 60vw; */
@@ -40,6 +48,7 @@ const Title = styled.h2`
     font-size: 1.75rem;
   }
 `;
+
 const FormContainer = styled.div`
   border: 1px solid #fed39f;
   border-radius: 1rem;
@@ -108,45 +117,52 @@ const FormSection = ({ setSliderInput }) => {
   return (
     <Container id="form-section">
       <Wrapper>
-        <Form onSubmit={handleSubmit}>
-          <Title>Tell us you’re saving without telling us you’re saving</Title>
-          <FormContainer>
-            <OptionsContainer>
-              <Option>
-                <Label>How much are you willing to spend?</Label>
-                <SliderContainer>
-                  <Slider
-                    axis="x"
-                    x={firstInput.x}
-                    onChange={({ x }) =>
-                      setFirstInput((state) => ({ ...state, x }))
-                    }
-                  />
-                  {firstInput.x}
-                </SliderContainer>
-              </Option>
-              <Line />
-              <Option>
-                <Label>How much are you willing to spend?</Label>
-                <SliderContainer>
-                  <Slider
-                    axis="x"
-                    x={secondInput.x}
-                    onChange={({ x }) =>
-                      setSecondInput((state) => ({ ...state, x }))
-                    }
-                  />
-                  {secondInput.x}
-                </SliderContainer>
-              </Option>
-            </OptionsContainer>
-            <InputContainer>
-              <Button type="submit" value="Submit">
-                <Anchor href="#login-form">Submit</Anchor>
-              </Button>
-            </InputContainer>
-          </FormContainer>
-        </Form>
+        <CarouselContainer>
+          <CarouselWrapper />
+        </CarouselContainer>
+        <FormWrapper>
+          <Form onSubmit={handleSubmit}>
+            <Title>
+              Tell us you’re saving without telling us you’re saving
+            </Title>
+            <FormContainer>
+              <OptionsContainer>
+                <Option>
+                  <Label>How much are you willing to spend?</Label>
+                  <SliderContainer>
+                    <Slider
+                      axis="x"
+                      x={firstInput.x}
+                      onChange={({ x }) =>
+                        setFirstInput((state) => ({ ...state, x }))
+                      }
+                    />
+                    {firstInput.x}
+                  </SliderContainer>
+                </Option>
+                <Line />
+                <Option>
+                  <Label>How much are you willing to spend?</Label>
+                  <SliderContainer>
+                    <Slider
+                      axis="x"
+                      x={secondInput.x}
+                      onChange={({ x }) =>
+                        setSecondInput((state) => ({ ...state, x }))
+                      }
+                    />
+                    {secondInput.x}
+                  </SliderContainer>
+                </Option>
+              </OptionsContainer>
+              <InputContainer>
+                <Button type="submit" value="Submit">
+                  <Anchor href="#login-form">Submit</Anchor>
+                </Button>
+              </InputContainer>
+            </FormContainer>
+          </Form>
+        </FormWrapper>
       </Wrapper>
     </Container>
   );

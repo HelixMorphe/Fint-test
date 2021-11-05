@@ -47,7 +47,13 @@ const InputButton = styled.input`
   border: none;
   border-radius: 0.5rem;
 `;
-
+const Label = styled.p`
+  font-size: 12px;
+  color: gray;
+  padding: 0 15px;
+  width: 80%;
+  max-width: 300px;
+`;
 const FormInput = ({ sliderInput }) => {
   let navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
@@ -123,6 +129,7 @@ const FormInput = ({ sliderInput }) => {
           autoComplete={0}
           required
         />
+
         <Input
           placeholder="Email"
           name="email"
