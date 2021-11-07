@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Logo } from "../data";
 const Container = styled.div`
   z-index: 99;
-  background-color: transparent;
-  position: fixed;
+  background-color: #ea6753;
+
   top: 0;
   padding: 0px 1rem;
 `;

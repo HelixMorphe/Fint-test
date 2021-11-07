@@ -3,7 +3,7 @@ import styled from "styled-components";
 import devices from "../breakpoints";
 import { HeroImage } from "../data";
 const Container = styled.div`
-  min-height: 100vh;
+  min-height: 95vh;
   background: #00b4db;
   background: linear-gradient(to bottom, #ea6753, #fd9464);
   background: -webkit-linear-gradient(to bottom, #ea6753, #fd9464);

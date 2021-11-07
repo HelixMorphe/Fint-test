@@ -82,7 +82,9 @@ const FormWrapper = styled.div`
 `;
 
 const Label = styled.label``;
-const Title = styled.h2``;
+const Title = styled.h2`
+  text-align: center;
+`;
 const SliderContainer = styled.div`
   padding: 0.5rem 0;
   width: 100%;
@@ -103,11 +105,18 @@ const Anchor = styled.a`
   text-decoration: none;
   color: white;
 `;
+const ResultContainer = styled.div`
+  display: ${(props) => props.displayResult || "none"};
+`;
+const Result = styled.div``;
 
 const FormSection2 = ({ setSliderInput }) => {
   const [firstInput, setFirstInput] = useState({ x: 10 });
   const [secondInput, setSecondInput] = useState({ x: 10 });
-
+  const [displayResult, setDisplayResult] = useState(0);
+  const handleOnClick = () => {
+    setDisplayResult(1);
+  };
   const pushValues = () => {
     setSliderInput({ firstInput, secondInput });
   };
@@ -117,7 +126,7 @@ const FormSection2 = ({ setSliderInput }) => {
     pushValues();
   };
   return (
-    <Container>
+    <Container id="form-section">
       <Wrapper>
         <CarouselContainer>
           <HeroTitle>We make your money move</HeroTitle>
@@ -125,12 +134,10 @@ const FormSection2 = ({ setSliderInput }) => {
         </CarouselContainer>
         <FormWrapper>
           <FormContainer>
-            <Title>
-              Tell us you’re saving without telling us you’re saving
-            </Title>
+            <Title>Let us know your plans</Title>
             <Form onSubmit={handleSubmit}>
               <Option>
-                <Label>How much are you willing to spend?</Label>
+                <Label>What's you're budget?</Label>
                 <SliderContainer>
                   <Slider
                     axis="x"
@@ -143,7 +150,7 @@ const FormSection2 = ({ setSliderInput }) => {
                 </SliderContainer>
               </Option>
               <Option>
-                <Label>How much are you willing to spend?</Label>
+                <Label>How much are you saving?</Label>
                 <SliderContainer>
                   <Slider
                     axis="x"
@@ -156,7 +163,11 @@ const FormSection2 = ({ setSliderInput }) => {
                 </SliderContainer>
               </Option>
             </Form>
+            <Button onClick={handleOnClick}>Next</Button>
           </FormContainer>
+          <ResultContainer displayResult={displayResult}>
+            <Result>Hello</Result>
+          </ResultContainer>
         </FormWrapper>
       </Wrapper>
     </Container>

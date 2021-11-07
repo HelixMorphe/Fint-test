@@ -82,10 +82,6 @@ const FormInput = ({ sliderInput }) => {
     await setDoc(doc(usersCollectionRef, values.mobileNumber), values);
   };
 
-  //get Users
-
-  //update refer
-
   const updateRef = async () => {
     const refDoc = doc(db, "users", referredBy);
 
@@ -146,7 +142,7 @@ const FormInput = ({ sliderInput }) => {
           autoComplete={0}
           required
         />
-        <InputButton type="submit" value="Save" />
+        <InputButton type="submit" value="Join waitlist" />
       </Form>
     </Container>
   );

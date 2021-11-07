@@ -55,13 +55,13 @@ const Rank = styled.div`
   background: white;
 `;
 const MyRank = styled.div`
-  border-radius: 1rem;
   display: flex;
+  border-bottom: 1px lightslategray solid;
   justify-content: space-around;
   padding: 1rem;
-  width: 70%;
+
   margin: auto;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   background: lightblue;
   cursor: pointer;
 `;
@@ -79,13 +79,16 @@ const Points = styled.div`
 `;
 
 const LeaderBoard2 = () => {
+  const [userExists, setUserExists] = useState(false);
+  const [user, setUser] = useState(false);
   const usersCollectionRef = collection(db, "users");
   //   const currentUserRef = doc(usersCollectionRef)
   const params = useParams();
   const findUser = async () => {
     const docRef = doc(db, "users", params.userId);
     const findCurrentUser = await getDoc(docRef);
-    console.log(findCurrentUser.data());
+    setUserExists(findCurrentUser.exists());
+    // setUser()
   };
 
   useEffect(() => {
@@ -94,6 +97,11 @@ const LeaderBoard2 = () => {
 
   const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
   const [leadersValue, leadersLoading, leadersError] = useCollection(q1, {});
+  if (!leadersLoading && userExists) {
+    var userIndex = leadersValue.docs.findIndex(
+      (doc, index) => doc.data().mobileNumber === params.userId
+    );
+  }
 
   return (
     <Container>
@@ -105,13 +113,26 @@ const LeaderBoard2 = () => {
       </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
-        leadersValue.docs.slice(0, 10).map((doc, index) => (
-          <Rank key={doc.id}>
-            <Index>{index + 1}</Index>
-            <Name>{doc.data().fullName}</Name>
-            <Points>{doc.data().referCount * 10}</Points>
-          </Rank>
-        ))}
+        leadersValue.docs.slice(0, 10).map((doc, index) => {
+          if (index === userIndex)
+            return (
+              <MyRank key={doc.id}>
+                <Index>{index + 1}</Index>
+                <Name>{doc.data().fullName}</Name>
+                <Points>{doc.data().referCount * 10}</Points>
+              </MyRank>
+            );
+          else {
+            return (
+              <Rank key={doc.id}>
+                <Index>{userIndex}</Index>
+                <Name>{doc.data().fullName}</Name>
+                <Points>{doc.data().referCount * 10}</Points>
+              </Rank>
+            );
+          }
+        })}
+      {/* {userIndex > 10 && <div>pK</div>} */}
     </Container>
   );
 };
