@@ -124,7 +124,7 @@ const LeaderBoard2 = () => {
       </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
-        leadersValue.docs.slice(0, 10).map((doc, index) => {
+        leadersValue.docs.slice(0, 5).map((doc, index) => {
           if (index === userIndex)
             return (
               <MyRank key={doc.id}>
@@ -143,7 +143,7 @@ const LeaderBoard2 = () => {
             );
           }
         })}
-      {userIndex > 10 && (
+      {userIndex > 5 && (
         <div>
           <UserInfo>There are {userIndex} people ahead of you.</UserInfo>
           <ClipBoard />

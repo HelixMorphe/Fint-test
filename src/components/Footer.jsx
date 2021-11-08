@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Logo } from "../data";
 
 const Container = styled.div`
-  height: 20vh;
+  /* height: 20vh; */
   /* background-image: url(/footerImage.svg); */
   background-position: center;
   background-repeat: no-repeat;

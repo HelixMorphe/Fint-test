@@ -20,7 +20,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 6rem;
   @media ${devices.m} {
     flex-direction: row;
     padding-top: 0;
@@ -33,6 +32,7 @@ const Hero = styled.div`
 const Title = styled.h1`
   font-size: 1.75rem;
   text-align: center;
+  margin-top: 0.5rem;
   @media ${devices.m} {
     font-size: 3rem;
     text-align: left;
@@ -40,7 +40,7 @@ const Title = styled.h1`
   /* font-size: 3rem; */
 `;
 const SubTitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
   @media ${devices.m} {

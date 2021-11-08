@@ -5,7 +5,7 @@ import CarouselWrapper from "./Carousel";
 import devices from "../breakpoints";
 const Container = styled.div`
   min-height: 100vh;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
   background: #00b4db;
   background-color: -webkit-linear-gradient(to bottom, #418599, #185f73);
   background-color: linear-gradient(to bottom, #418599, #185f73);
@@ -66,7 +66,7 @@ const Form = styled.form`
   height: 100%;
 `;
 const HeroTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 20px 0;
   color: white;
   opacity: 0.9;
@@ -154,17 +154,19 @@ const FormSection2 = ({ setSliderInput }) => {
   };
   return (
     <Container id="form-section">
-      <HeroTitle>We make your money move.</HeroTitle>
       <Wrapper>
         <CarouselContainer>
+          <HeroTitle>We make your money move.</HeroTitle>
           <CarouselWrapper />
         </CarouselContainer>
         <FormWrapper>
           <FormContainer>
-            <Title>Let us know your plans</Title>
+            <Title>
+              Tell us you're saving without telling us you're saving.
+            </Title>
             <Form onSubmit={handleSubmit}>
               <RadioContainer onChange={handleRadioChange}>
-                <RadioTitle>Select your goal?</RadioTitle>
+                {/* <RadioTitle>Select your goal?</RadioTitle> */}
                 <RadioOption>
                   <RadioInput
                     type="radio"
@@ -226,7 +228,7 @@ const FormSection2 = ({ setSliderInput }) => {
               </Option>
             </Form>
             <Button onClick={handleOnClick} type="submit">
-              Predict
+              Show Off
             </Button>
             <ResultContainer displayResult={displayResult}>
               <Result>We Will help you acheive this goal in 9 months</Result>
