@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Header />
+      <Header bg="#418599" />
       <Section />
       <FormSection2 setSliderInput={setSliderInput} />
       {/* <FormSection setSliderInput={setSliderInput} /> */}

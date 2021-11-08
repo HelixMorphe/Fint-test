@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Logo } from "../data";
 const Container = styled.div`
   z-index: 99;
-  background-color: #ea6753;
+  background-color: ${(props) => props.bg};
 
   top: 0;
   padding: 0px 1rem;

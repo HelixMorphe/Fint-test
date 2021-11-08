@@ -14,14 +14,16 @@ import {
 
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useParams } from "react-router-dom";
+import ClipBoard from "./ClipBoard";
 
 const Container = styled.div`
   border-radius: 1rem;
-  padding: 3rem;
-  width: 80%;
+
+  width: 95%;
   margin: auto;
 `;
 const Title = styled.h1`
+  font-size: 1.5rem;
   text-align: center;
   color: white;
   background: skyblue;
@@ -81,7 +83,12 @@ const Points = styled.div`
   flex: 1;
   text-align: center;
 `;
-
+const UserInfo = styled.div`
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0;
+`;
 const LeaderBoard2 = () => {
   const [userExists, setUserExists] = useState(false);
   const [user, setUser] = useState(false);
@@ -111,7 +118,7 @@ const LeaderBoard2 = () => {
     <Container>
       <Title>LEADERBOARD</Title>
       <SubHeadings>
-        <SubHeading>Rank</SubHeading>
+        <SubHeading>#</SubHeading>
         <SubHeading>Name</SubHeading>
         <SubHeading>Points</SubHeading>
       </SubHeadings>
@@ -121,7 +128,7 @@ const LeaderBoard2 = () => {
           if (index === userIndex)
             return (
               <MyRank key={doc.id}>
-                <Index>{index + 1}</Index>
+                <Index>{userIndex}</Index>
                 <Name>{doc.data().fullName}</Name>
                 <Points>{doc.data().referCount * 10}</Points>
               </MyRank>
@@ -129,14 +136,19 @@ const LeaderBoard2 = () => {
           else {
             return (
               <Rank key={doc.id}>
-                <Index>{userIndex}</Index>
+                <Index>{index + 1}</Index>
                 <Name>{doc.data().fullName}</Name>
                 <Points>{doc.data().referCount * 10}</Points>
               </Rank>
             );
           }
         })}
-      {/* {userIndex > 10 && <div>pK</div>} */}
+      {userIndex > 10 && (
+        <div>
+          <UserInfo>There are {userIndex} people ahead of you.</UserInfo>
+          <ClipBoard />
+        </div>
+      )}
     </Container>
   );
 };

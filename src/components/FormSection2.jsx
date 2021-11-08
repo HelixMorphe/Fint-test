@@ -7,8 +7,8 @@ const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 3rem;
   background: #00b4db;
-  background-color: -webkit-linear-gradient(to bottom right, #418599, #185f73);
-  background-color: linear-gradient(to bottom right, #418599, #185f73);
+  background-color: -webkit-linear-gradient(to bottom, #418599, #185f73);
+  background-color: linear-gradient(to bottom, #418599, #185f73);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,16 +39,18 @@ const CarouselContainer = styled.div`
 `;
 const FormContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 2rem;
   /* width: 40%; */
   border-radius: 1rem;
+  min-height: 60vh;
   padding: 2rem;
   margin: auto;
   background-color: white;
   @media ${devices.m} {
-    width: 80%;
+    width: 50%;
   }
 `;
 
@@ -226,10 +228,10 @@ const FormSection2 = ({ setSliderInput }) => {
             <Button onClick={handleOnClick} type="submit">
               Predict
             </Button>
+            <ResultContainer displayResult={displayResult}>
+              <Result>We Will help you acheive this goal in 9 months</Result>
+            </ResultContainer>
           </FormContainer>
-          <ResultContainer displayResult={displayResult}>
-            <Result>Hello</Result>
-          </ResultContainer>
         </FormWrapper>
       </Wrapper>
       <Anchor href="#sign-me-up">
