@@ -12,9 +12,9 @@ const Img = styled.img`
   width: 100px;
 `;
 
-const Header = () => {
+const Header = ({ bg }) => {
   return (
-    <Container>
+    <Container bg={bg}>
       <Img src={Logo} alt="logo" />
     </Container>
   );
