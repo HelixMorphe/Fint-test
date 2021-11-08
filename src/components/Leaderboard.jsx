@@ -64,6 +64,10 @@ const MyRank = styled.div`
   /* margin-bottom: 0.5rem; */
   background: lightblue;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.06);
+  }
 `;
 const Index = styled.div`
   flex: 1;

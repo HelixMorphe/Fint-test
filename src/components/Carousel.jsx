@@ -33,21 +33,35 @@ const CarouselWrapper = () => {
     height: 100px;
     object-fit: contain;
     margin: auto;
+    flex: 2;
   `;
   const ImageTitle = styled.h2`
     text-align: center;
+    flex: 1;
+    @media ${devices.m} {
+      text-align: left;
+    }
   `;
   const ItemContent = styled.div`
     padding: 2rem;
     text-align: center;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    @media ${devices.m} {
+      text-align: left;
+    }
   `;
-  const ImageContent = styled.p``;
+  const ImageContent = styled.p`
+    flex: 1;
+  `;
   return (
     <Container>
       <Slider {...settings}>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/goingup.png" />
+            <Image src="https://e7.pngegg.com/pngimages/966/538/png-clipart-investment-money-economic-development-finance-wealth-economic-growth-icon-investment-wealth.png" />
             <ImageTitle>Invest</ImageTitle>
             <ImageContent>
               Personalized according to your needs. It’s your money,so we
@@ -57,7 +71,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/coins.png" />
+            <Image src="https://www.pngall.com/wp-content/uploads/5/Money-Investment-PNG-Clipart.png" />
             <ImageTitle>Earn</ImageTitle>
             <ImageContent>
               Earn up to 20% cashback Rewards, reinvest to give yourself a pat
@@ -67,7 +81,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/peace2.png" />
+            <Image src="https://e7.pngegg.com/pngimages/450/120/png-clipart-cone-with-confetti-illustration-party-popper-computer-icons-celebration-icon-miscellaneous-orange.png" />
             <ImageTitle>Celebrate</ImageTitle>
             <ImageContent>
               Crush your financial goals and say goodbye to the feeling of FOMO.

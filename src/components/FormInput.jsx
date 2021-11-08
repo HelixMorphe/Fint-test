@@ -61,7 +61,6 @@ const FormInput = ({ sliderInput }) => {
 
   var initialFieldValues = {
     fullName: "",
-    email: "",
     mobileNumber: "",
     sliderInput: {},
     referrals: [""],
@@ -127,15 +126,7 @@ const FormInput = ({ sliderInput }) => {
         />
 
         <Input
-          placeholder="Email"
-          name="email"
-          value={values.email}
-          onChange={handleInputChange}
-          autoComplete={0}
-          required
-        />
-        <Input
-          placeholder="Mobile Number"
+          placeholder="Whatsapp Number"
           name="mobileNumber"
           value={values.mobileNumber}
           onChange={handleInputChange}
