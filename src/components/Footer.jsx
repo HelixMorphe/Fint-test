@@ -37,11 +37,11 @@ const Footer = () => {
       <Wrapper>
         <Img src={Logo} />
         <Contact>
-          <p>testemail@gmail.com</p>
+          <p>kush@fint.money</p>
           <p>995 905 9502</p>
         </Contact>
       </Wrapper>
-      <Copyrights>© 2021 Fint, all rights reserved</Copyrights>
+      <Copyrights>©2021 Fint, all rights reserved</Copyrights>
     </Container>
   );
 };

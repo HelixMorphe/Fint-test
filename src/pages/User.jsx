@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import devices from "../breakpoints";
 import ClipBoard from "../components/ClipBoard";
 import { WhatsApp } from "@mui/icons-material";
+import LeaderBoardFooter from "../components/LeaderBoardFooter";
 const Container = styled.div`
   background: linear-gradient(to bottom, #49dd81, #07b0cb);
   min-height: 100vh;
@@ -108,6 +109,7 @@ const UserPage = () => {
           </WhatsAppLogo>
         </Anchor>
       </Wrapper>
+      <LeaderBoardFooter />
     </Container>
   );
 };

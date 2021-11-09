@@ -155,6 +155,11 @@ const Result = styled.p`
   text-align: center;
   color: black;
 `;
+
+const ResultNumber = styled.p`
+  font-size: 1.5rem;
+  font-weight: 700;
+`;
 const Input = styled.input``;
 const FormSection2 = ({ setSliderInput }) => {
   const [radioInput, setRadioInput] = useState("option 1");
@@ -265,7 +270,8 @@ const FormSection2 = ({ setSliderInput }) => {
             </Form>
             <ResultContainer displayResult={displayResult}>
               <Result>
-                We Will help you acheive this goal in {resultCalc()}.
+                We Will help you acheive this goal in
+                <br /> <ResultNumber>{resultCalc()}.</ResultNumber>
               </Result>
             </ResultContainer>
             <Button

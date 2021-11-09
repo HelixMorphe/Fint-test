@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import LeaderBoardFooter from "./LeaderBoardFooter";
 import { db } from "../firebase";
 import {
   collection,
@@ -28,6 +29,16 @@ const Title = styled.h1`
   color: white;
   background: skyblue;
   padding: 2rem 0;
+`;
+
+const Description = styled.div`
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+  font-weight: 700;
+  font-size: 1.5rem;
 `;
 const SubHeadings = styled.div`
   display: flex;
@@ -117,10 +128,13 @@ const LeaderBoard2 = () => {
   return (
     <Container>
       <Title>LEADERBOARD</Title>
+      <Description>
+        <p>1 REFERRAL = 10 FINT COINS</p>
+      </Description>
       <SubHeadings>
         <SubHeading>#</SubHeading>
         <SubHeading>Name</SubHeading>
-        <SubHeading>Points</SubHeading>
+        <SubHeading>Fint Coins</SubHeading>
       </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
@@ -145,8 +159,7 @@ const LeaderBoard2 = () => {
         })}
       {userIndex > 5 && (
         <div>
-          <UserInfo>There are {userIndex} people ahead of you.</UserInfo>
-          <ClipBoard />
+          <UserInfo>There are {userIndex + 30} people ahead of you.</UserInfo>
         </div>
       )}
     </Container>

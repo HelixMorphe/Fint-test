@@ -61,7 +61,7 @@ const CarouselWrapper = () => {
       <Slider {...settings}>
         <Item>
           <ItemContent>
-            <Image src="https://e7.pngegg.com/pngimages/966/538/png-clipart-investment-money-economic-development-finance-wealth-economic-growth-icon-investment-wealth.png" />
+            <Image src="http://fint.money/images/goingup.png" />
             <ImageTitle>Invest</ImageTitle>
             <ImageContent>
               Personalized according to your needs. It’s your money,so we
@@ -71,7 +71,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="https://www.pngall.com/wp-content/uploads/5/Money-Investment-PNG-Clipart.png" />
+            <Image src="http://fint.money/images/coins.png" />
             <ImageTitle>Earn</ImageTitle>
             <ImageContent>
               Earn up to 20% cashback Rewards, reinvest to give yourself a pat
@@ -81,7 +81,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="https://e7.pngegg.com/pngimages/450/120/png-clipart-cone-with-confetti-illustration-party-popper-computer-icons-celebration-icon-miscellaneous-orange.png" />
+            <Image src="http://fint.money/images/peace2.png" />
             <ImageTitle>Celebrate</ImageTitle>
             <ImageContent>
               Crush your financial goals and say goodbye to the feeling of FOMO.

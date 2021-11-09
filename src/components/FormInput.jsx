@@ -54,6 +54,13 @@ const Label = styled.p`
   width: 80%;
   max-width: 300px;
 `;
+
+const Desclaimer = styled.p`
+  text-align: center;
+  width: 80%;
+  font-size: 0.825rem;
+  margin: 1rem auto;
+`;
 const FormInput = ({ sliderInput }) => {
   let navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
@@ -135,6 +142,9 @@ const FormInput = ({ sliderInput }) => {
         />
         <InputButton type="submit" value="Join waitlist" />
       </Form>
+      <Desclaimer>
+        *You can check your leaderboard rank by putting your details again
+      </Desclaimer>
     </Container>
   );
 };
