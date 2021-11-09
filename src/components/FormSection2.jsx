@@ -78,7 +78,7 @@ const HeroTitle = styled.h2`
   opacity: 0.9;
   text-align: center;
   @media ${devices.m} {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     /* line-height: 96px; */
   }

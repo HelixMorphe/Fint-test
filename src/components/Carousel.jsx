@@ -64,7 +64,7 @@ const CarouselWrapper = () => {
       <Slider {...settings}>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/goingup.png" />
+            <Image src="/Image3.png" />
             <ImageTitle>Invest</ImageTitle>
             <ImageContent>
               Personalized according to your needs. It’s your money,so we
@@ -74,7 +74,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/coins.png" />
+            <Image src="/Image2.png" />
             <ImageTitle>Earn</ImageTitle>
             <ImageContent>
               Earn up to 20% cashback Rewards, reinvest to give yourself a pat
@@ -84,7 +84,7 @@ const CarouselWrapper = () => {
         </Item>
         <Item>
           <ItemContent>
-            <Image src="http://fint.money/images/peace2.png" />
+            <Image src="/Image1.png" />
             <ImageTitle>Celebrate</ImageTitle>
             <ImageContent>
               Crush your financial goals and say goodbye to the feeling of FOMO.
