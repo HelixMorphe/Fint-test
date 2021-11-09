@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import devices from "../breakpoints";
 import LeaderBoardFooter from "./LeaderBoardFooter";
 import { db } from "../firebase";
 import {
@@ -20,25 +21,40 @@ import ClipBoard from "./ClipBoard";
 const Container = styled.div`
   border-radius: 1rem;
 
-  width: 95%;
+  width: 85%;
   margin: auto;
 `;
-const Title = styled.h1`
+const Heading = styled.div`
   font-size: 1.5rem;
   text-align: center;
   color: white;
-  background: skyblue;
-  padding: 2rem 0;
-`;
-
-const Description = styled.div`
-  padding: 2rem;
+  background: #121212;
+  padding: 2rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: blanchedalmond;
-  font-weight: 700;
-  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media ${devices.m} {
+    flex-direction: row;
+  }
+`;
+const Title = styled.h1`
+  flex: 1;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  @media ${devices.m} {
+    font-size: 2rem;
+  }
+`;
+
+const Description = styled.h2`
+  flex: 1;
+  font-size: 0.75rem;
+  color: #f49b0b;
+  @media ${devices.m} {
+    font-size: 1rem;
+  }
 `;
 const SubHeadings = styled.div`
   display: flex;
@@ -120,6 +136,7 @@ const LeaderBoard2 = () => {
   const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
   const [leadersValue, leadersLoading, leadersError] = useCollection(q1, {});
   if (!leadersLoading && userExists) {
+    console.log(leadersValue);
     var userIndex = leadersValue.docs.findIndex(
       (doc, index) => doc.data().mobileNumber === params.userId
     );
@@ -127,10 +144,11 @@ const LeaderBoard2 = () => {
 
   return (
     <Container>
-      <Title>LEADERBOARD</Title>
-      <Description>
-        <p>1 REFERRAL = 10 FINT COINS</p>
-      </Description>
+      {/* <Title>LEADERBOARD</Title> */}
+      <Heading>
+        <Title>Our top Evangelists</Title>
+        <Description>1 REFERRAL = 10 FINT COINS</Description>
+      </Heading>
       <SubHeadings>
         <SubHeading>#</SubHeading>
         <SubHeading>Name</SubHeading>
@@ -159,7 +177,10 @@ const LeaderBoard2 = () => {
         })}
       {userIndex > 5 && (
         <div>
-          <UserInfo>There are {userIndex + 30} people ahead of you.</UserInfo>
+          <UserInfo>
+            Out of {leadersValue.size} sign-ups on the waitlist, your rank is{" "}
+            {userIndex + 30}
+          </UserInfo>
         </div>
       )}
     </Container>

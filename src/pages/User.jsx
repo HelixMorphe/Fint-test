@@ -8,7 +8,8 @@ import ClipBoard from "../components/ClipBoard";
 import { WhatsApp } from "@mui/icons-material";
 import LeaderBoardFooter from "../components/LeaderBoardFooter";
 const Container = styled.div`
-  background: linear-gradient(to bottom, #49dd81, #07b0cb);
+  /* background: linear-gradient(to bottom, #49dd81, #07b0cb); */
+  background-color: #f7f6f3;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,18 +18,23 @@ const Title = styled.h1`
   font-size: 1rem;
   text-align: center;
   margin-bottom: 1.25rem;
+  margin-top: 6rem;
   font-weight: bold;
   @media ${devices.m} {
     font-size: 1.25rem;
+    margin-top: 0;
   } ;
 `;
 
 const SubTitle = styled.p`
   text-align: center;
-  font-size: 0.825rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  color: green;
+  color: #f49b0b;
   margin-bottom: 1rem;
+`;
+const Span = styled.span`
+  color: #f49b0b;
 `;
 const Wrapper = styled.div`
   width: 95%;
@@ -84,14 +90,18 @@ const UserPage = () => {
   }`;
   return (
     <Container>
-      <Header bg="#49dd81" />
+      <Header bg="#F7F6F3" />
       <Wrapper>
         <Title>
           Thank you for becoming a part of #FintFamily😀.
           <br />
           At Fint, we believe in co-creating the investment experience.
           <br />
-          Invite your friends to join and earn exclusive FINT coins.
+          Invite your friends to join and earn{" "}
+          <Span>
+            exclusive <br />
+            FINT coins.
+          </Span>
         </Title>
 
         <SubTitle>(More you refer , More you earn)</SubTitle>

@@ -8,14 +8,15 @@ import devices from "../breakpoints";
 const Container = styled.div`
   width: 100%;
   margin: auto;
+  /* border: 2px solid red; */
   @media ${devices.m} {
     width: 70%;
   }
 `;
 const Item = styled.div`
-  background-color: white;
+  background-color: #121212;
   /* border-radius: 10px; */
-  min-height: 300px;
+  min-height: 350px;
 `;
 const CarouselWrapper = () => {
   const settings = {
@@ -38,11 +39,13 @@ const CarouselWrapper = () => {
   const ImageTitle = styled.h2`
     text-align: center;
     flex: 1;
+    color: white;
     @media ${devices.m} {
       text-align: left;
     }
   `;
   const ItemContent = styled.div`
+    color: white;
     padding: 2rem;
     text-align: center;
     height: 250px;

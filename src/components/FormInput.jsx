@@ -14,6 +14,8 @@ import {
 } from "firebase/firestore";
 
 const Container = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
   width: 70%;
   max-width: 500px;
   margin: auto;
@@ -58,7 +60,7 @@ const Label = styled.p`
 const Desclaimer = styled.p`
   text-align: center;
   width: 80%;
-  font-size: 0.825rem;
+  font-size: 0.75rem;
   margin: 1rem auto;
 `;
 const FormInput = ({ sliderInput }) => {

@@ -8,7 +8,7 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ff7f6a;
+  background-color: #121212;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Img = styled.img`
-  width: 100px;
+  width: 120px;
 `;
 const Contact = styled.div``;
 const Copyrights = styled.p`
@@ -37,8 +37,8 @@ const Footer = () => {
       <Wrapper>
         <Img src={Logo} />
         <Contact>
-          <p>kush@fint.money</p>
-          <p>995 905 9502</p>
+          <p>Email: kush@fint.money</p>
+          <p>Contact no: 9424758397</p>
         </Contact>
       </Wrapper>
       <Copyrights>©2021 Fint, all rights reserved</Copyrights>

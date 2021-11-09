@@ -6,9 +6,7 @@ import devices from "../breakpoints";
 const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 3rem;
-  background: #00b4db;
-  background-color: -webkit-linear-gradient(to bottom, #418599, #185f73);
-  background-color: linear-gradient(to bottom, #418599, #185f73);
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +14,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  /* border: 2px solid blue; */
   width: 90%;
   margin: auto;
   display: flex;
@@ -24,11 +23,16 @@ const Wrapper = styled.div`
   justify-content: space-between;
   @media ${devices.m} {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
   }
 `;
 const CarouselContainer = styled.div`
-  height: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* height: 60vh; */
   width: 100%;
   margin: 2rem;
   z-index: 0;
@@ -42,13 +46,13 @@ const FormContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   /* width: 40%; */
   border-radius: 1rem;
   min-height: 60vh;
   padding: 2rem;
   margin: auto;
-  background-color: white;
+  background-color: #121212;
   @media ${devices.m} {
     width: 50%;
   }
@@ -61,14 +65,16 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  color: #af460f;
+  color: white;
 
   height: 100%;
 `;
 const HeroTitle = styled.h2`
-  font-size: 2rem;
-  padding: 20px 0;
-  color: white;
+  color: rgb(245, 166, 35);
+  font-size: 1.5rem;
+  /* padding: 20px 0; */
+  margin-bottom: 5rem;
+  /* color: black; */
   opacity: 0.9;
   text-align: center;
   @media ${devices.m} {
@@ -85,11 +91,24 @@ const Option = styled.div`
 
 const FormWrapper = styled.div`
   width: 100%;
+  margin-top: 5rem;
+  @media ${devices.m} {
+    margin-top: 0;
+  }
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+  color: rgb(245, 166, 35);
+`;
 const Title = styled.h2`
+  color: white;
+  font-size: 1.5rem;
   text-align: center;
+  display: ${(props) => props.display};
+
+  @media ${devices.m} {
+    margin-top: 2rem;
+  }
 `;
 const SliderContainer = styled.div`
   padding: 0.5rem 0;
@@ -103,8 +122,8 @@ const Button = styled.button`
   cursor: pointer;
   padding: 10px 15px;
   border: none;
-  background: black;
-  color: white;
+  background: rgb(245, 166, 35);
+  color: black;
   border-radius: 0.5rem;
   display: ${(props) => props.display};
 `;
@@ -124,7 +143,9 @@ const RadioTitle = styled.h2``;
 const RadioInput = styled.input`
   display: flex;
 `;
-const RadioLabel = styled.label``;
+const RadioLabel = styled.label`
+  color: rgb(245, 166, 35);
+`;
 const RadioOption = styled.div`
   display: flex;
   margin-top: 10px;
@@ -132,7 +153,7 @@ const RadioOption = styled.div`
 `;
 
 const ResultContainer = styled.div`
-  height: 40vh;
+  height: 50vh;
   position: relative;
   background-image: url(http://fint.money/images/check2.png);
   background-size: cover;
@@ -147,7 +168,7 @@ const ResultContainer = styled.div`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 `;
 const Result = styled.p`
@@ -160,7 +181,6 @@ const ResultNumber = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
 `;
-const Input = styled.input``;
 const FormSection2 = ({ setSliderInput }) => {
   const [radioInput, setRadioInput] = useState("option 1");
   const [firstInput, setFirstInput] = useState({ x: 1000 });
@@ -190,13 +210,13 @@ const FormSection2 = ({ setSliderInput }) => {
     <Container id="form-section">
       <Wrapper>
         <CarouselContainer>
-          <HeroTitle>We make your money move.</HeroTitle>
+          <HeroTitle>We make your money move </HeroTitle>
           <CarouselWrapper />
         </CarouselContainer>
         <FormWrapper>
           <FormContainer>
-            <Title>
-              Tell us you're saving without telling us you're saving.
+            <Title display={displayResult ? "none" : "flex"}>
+              Let us know your goals.
             </Title>
             <Form
               onSubmit={handleSubmit}

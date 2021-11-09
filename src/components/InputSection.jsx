@@ -4,7 +4,8 @@ import FormInput from "./FormInput";
 import devices from "../breakpoints";
 const Container = styled.div`
   min-height: 70vh;
-  background: linear-gradient(to bottom right, #d846ef, #9233e6);
+  /* background: linear-gradient(to bottom right, #d846ef, #9233e6); */
+  background-color: #f7f6f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,24 +22,25 @@ const Wrapper = styled.div`
 `;
 const Title = styled.h3`
   font-size: 0.825rem;
-
+  /* border: 2px solid black; */
   /* font-size: 2rem; */
   text-align: center;
-  color: #ffe8cd;
+  color: rgba(0, 0, 0, 0.7);
   flex: 1;
   margin-top: 2rem;
   @media ${devices.m} {
+    margin-top: 0;
     font-size: 2rem;
     text-align: left;
   }
 `;
 const Span = styled.span`
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   @media ${devices.m} {
     font-size: 2.5rem;
   }
   /* font-size: 2.5rem; */
-  /* color: #e59866; */
+  color: #f5a623;
 `;
 const FormContainer = styled.div`
   flex: 1;
