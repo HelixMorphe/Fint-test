@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import LeaderBoard from "../components/Leaderboard";
 import Header from "../components/Header";
+import { useParams } from "react-router-dom";
 import devices from "../breakpoints";
 import ClipBoard from "../components/ClipBoard";
-import { Anchor, WhatsApp } from "@mui/icons-material";
+import { WhatsApp } from "@mui/icons-material";
 const Container = styled.div`
   background: linear-gradient(to bottom, #49dd81, #07b0cb);
   min-height: 100vh;
@@ -36,6 +37,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 2rem;
 `;
 
 const ClipBoardContainer = styled.div`
@@ -60,7 +62,25 @@ const LogoDesc = styled.p`
   font-size: 16px;
   color: white;
 `;
+const Anchor = styled.a`
+  margin-top: 1rem;
+  &:link {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+`;
 const UserPage = () => {
+  const link = `whatsapp://send?text=%20Hey!%20I%20am%20inviting%20you%20to%20join%20me%20on%20this%20amazing%20app%20for%20achieving%20your%20financial%20goals.Open%20this%20link%20and%20help%20me%20get%20more%20Fint%20Coins%20-%20http://fint.money/referredBy=${
+    useParams().userId
+  }`;
   return (
     <Container>
       <Header bg="#49dd81" />
@@ -81,12 +101,12 @@ const UserPage = () => {
           </ClipBoardWrapper>
         </ClipBoardContainer>
         <LeaderBoard />
-        <a href="https://wa.me/9959059501">
+        <Anchor href={link}>
           <WhatsAppLogo>
             <WhatsApp />
             <LogoDesc>Share on WhatsApp</LogoDesc>
           </WhatsAppLogo>
-        </a>
+        </Anchor>
       </Wrapper>
     </Container>
   );
