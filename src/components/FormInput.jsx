@@ -114,7 +114,7 @@ const FormInput = ({ sliderInput }) => {
     if (referredBy) {
       updateRef();
     }
-    navigate(`/users/${values.mobileNumber}#top`);
+    navigate(`/users/${values.mobileNumber}`);
   };
 
   const handleFormSubmit = (e) => {

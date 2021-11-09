@@ -14,7 +14,7 @@ const Img = styled.img`
 
 const Header = ({ bg }) => {
   return (
-    <Container bg={bg} id="top">
+    <Container bg={bg}>
       <Img src={Logo} alt="logo" />
     </Container>
   );
