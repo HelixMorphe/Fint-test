@@ -10,7 +10,7 @@ import LeaderBoardFooter from "../components/LeaderBoardFooter";
 const Container = styled.div`
   /* background: linear-gradient(to bottom, #49dd81, #07b0cb); */
   background-color: #f7f6f3;
-  min-height: 100vh;
+  /* min-height: 00vh; */
   display: flex;
   flex-direction: column;
 `;
@@ -120,6 +120,8 @@ const UserPage = () => {
         </Anchor>
       </Wrapper>
       <LeaderBoardFooter />
+
+      {/* <LeaderBoardFooter /> */}
     </Container>
   );
 };

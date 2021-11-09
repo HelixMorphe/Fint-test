@@ -143,7 +143,7 @@ const LeaderBoard2 = () => {
   }
 
   return (
-    <Container>
+    <Container id="top">
       {/* <Title>LEADERBOARD</Title> */}
       <Heading>
         <Title>Our top Evangelists</Title>
@@ -183,6 +183,7 @@ const LeaderBoard2 = () => {
           </UserInfo>
         </div>
       )}
+      {/* <LeaderBoardFooter /> */}
     </Container>
   );
 };

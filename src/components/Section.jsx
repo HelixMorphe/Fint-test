@@ -96,6 +96,7 @@ const Img = styled.img`
 
   @media ${devices.m} {
     height: 650px;
+    width: auto;
   }
 `;
 
