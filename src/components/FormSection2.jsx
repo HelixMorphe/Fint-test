@@ -5,7 +5,7 @@ import CarouselWrapper from "./Carousel";
 import devices from "../breakpoints";
 const Container = styled.div`
   min-height: 100vh;
-  padding: 3rem 0;
+  padding-bottom: 3rem;
   background: #00b4db;
   background-color: -webkit-linear-gradient(to bottom, #418599, #185f73);
   background-color: linear-gradient(to bottom, #418599, #185f73);
@@ -57,7 +57,7 @@ const FormContainer = styled.div`
 const Form = styled.form`
   padding: 1rem;
   height: 100%;
-  display: flex;
+  display: ${(props) => props.display};
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
@@ -66,7 +66,7 @@ const Form = styled.form`
   height: 100%;
 `;
 const HeroTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 20px 0;
   color: white;
   opacity: 0.9;
@@ -106,10 +106,12 @@ const Button = styled.button`
   background: black;
   color: white;
   border-radius: 0.5rem;
+  display: ${(props) => props.display};
 `;
 const Anchor = styled.a`
   text-decoration: none;
   color: white;
+  display: ${(props) => props.display};
 `;
 
 const RadioContainer = styled.div`
@@ -130,15 +132,42 @@ const RadioOption = styled.div`
 `;
 
 const ResultContainer = styled.div`
+  height: 40vh;
+  position: relative;
+  background-image: url(http://fint.money/images/check2.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   display: ${(props) => props.displayResult || "none"};
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `;
-const Result = styled.div``;
+const Result = styled.p`
+  padding: 0.5rem;
+  text-align: center;
+  color: black;
+`;
 const Input = styled.input``;
 const FormSection2 = ({ setSliderInput }) => {
   const [radioInput, setRadioInput] = useState("option 1");
-  const [firstInput, setFirstInput] = useState({ x: 10 });
-  const [secondInput, setSecondInput] = useState({ x: 10 });
+  const [firstInput, setFirstInput] = useState({ x: 1000 });
+  const [secondInput, setSecondInput] = useState({ x: 1000 });
   const [displayResult, setDisplayResult] = useState(0);
+
+  const resultCalc = () => {
+    const ratio = firstInput.x / secondInput.x;
+    if (ratio < 4) {
+      return `${ratio} weeks`;
+    } else return `${ratio / 4} months`;
+  };
   const handleOnClick = () => {
     setDisplayResult(1);
   };
@@ -164,7 +193,10 @@ const FormSection2 = ({ setSliderInput }) => {
             <Title>
               Tell us you're saving without telling us you're saving.
             </Title>
-            <Form onSubmit={handleSubmit}>
+            <Form
+              onSubmit={handleSubmit}
+              display={displayResult === 1 ? "none" : "flex"}
+            >
               <RadioContainer onChange={handleRadioChange}>
                 {/* <RadioTitle>Select your goal?</RadioTitle> */}
                 <RadioOption>
@@ -204,6 +236,8 @@ const FormSection2 = ({ setSliderInput }) => {
                 <Label>What's you're budget?</Label>
                 <SliderContainer>
                   <Slider
+                    xmin={10000}
+                    xmax={100000}
                     axis="x"
                     x={firstInput.x}
                     onChange={({ x }) =>
@@ -217,6 +251,8 @@ const FormSection2 = ({ setSliderInput }) => {
                 <Label>How much are you saving?</Label>
                 <SliderContainer>
                   <Slider
+                    xmin={1000}
+                    xmax={20000}
                     axis="x"
                     x={secondInput.x}
                     onChange={({ x }) =>
@@ -227,18 +263,27 @@ const FormSection2 = ({ setSliderInput }) => {
                 </SliderContainer>
               </Option>
             </Form>
-            <Button onClick={handleOnClick} type="submit">
+            <ResultContainer displayResult={displayResult}>
+              <Result>
+                We Will help you acheive this goal in {resultCalc()}.
+              </Result>
+            </ResultContainer>
+            <Button
+              onClick={handleOnClick}
+              type="submit"
+              display={displayResult ? "none" : "flex"}
+            >
               Show Off
             </Button>
-            <ResultContainer displayResult={displayResult}>
-              <Result>We Will help you acheive this goal in 9 months</Result>
-            </ResultContainer>
+            <Anchor
+              href="#sign-me-up"
+              display={!displayResult ? "none" : "flex"}
+            >
+              <Button>Sign Me Up</Button>
+            </Anchor>
           </FormContainer>
         </FormWrapper>
       </Wrapper>
-      <Anchor href="#sign-me-up">
-        <Button>Sign Me Up</Button>
-      </Anchor>
     </Container>
   );
 };

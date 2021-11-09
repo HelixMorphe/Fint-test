@@ -128,7 +128,7 @@ const LeaderBoard2 = () => {
           if (index === userIndex)
             return (
               <MyRank key={doc.id}>
-                <Index>{userIndex}</Index>
+                <Index>{userIndex + 1}</Index>
                 <Name>{doc.data().fullName}</Name>
                 <Points>{doc.data().referCount * 10}</Points>
               </MyRank>
