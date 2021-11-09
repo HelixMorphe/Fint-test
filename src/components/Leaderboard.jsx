@@ -143,7 +143,7 @@ const LeaderBoard2 = () => {
   }
 
   return (
-    <Container id="top">
+    <Container>
       {/* <Title>LEADERBOARD</Title> */}
       <Heading>
         <Title>Our top Evangelists</Title>

@@ -5,7 +5,7 @@ const Container = styled.div`
   background-color: ${(props) => props.bg};
   height: 15vh;
   top: 0;
-  padding: 0px 1rem;
+  padding: 0px 3rem;
 `;
 
 const Img = styled.img`
@@ -14,7 +14,7 @@ const Img = styled.img`
 
 const Header = ({ bg }) => {
   return (
-    <Container bg={bg}>
+    <Container bg={bg} id="top">
       <Img src={Logo} alt="logo" />
     </Container>
   );
