@@ -175,7 +175,7 @@ const LeaderBoard2 = () => {
             );
           }
         })}
-      {userIndex > 5 && (
+      {userIndex > 4 && (
         <div>
           <UserInfo>
             Out of {leadersValue.size + 250} sign-ups on the waitlist, your rank
