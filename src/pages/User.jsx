@@ -7,6 +7,7 @@ import devices from "../breakpoints";
 import ClipBoard from "../components/ClipBoard";
 import { WhatsApp } from "@mui/icons-material";
 import LeaderBoardFooter from "../components/LeaderBoardFooter";
+import Footer from "../components/Footer";
 const Container = styled.div`
   /* background: linear-gradient(to bottom, #49dd81, #07b0cb); */
   background-color: #f7f6f3;
@@ -122,6 +123,7 @@ const UserPage = () => {
       <LeaderBoardFooter />
 
       {/* <LeaderBoardFooter /> */}
+      <Footer />
     </Container>
   );
 };
