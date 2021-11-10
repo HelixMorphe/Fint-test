@@ -118,6 +118,7 @@ const SliderContainer = styled.div`
   justify-content: space-between;
 `;
 const Button = styled.button`
+  margin: 0 10px;
   border: 2px solid black;
   cursor: pointer;
   padding: 10px 15px;
@@ -182,6 +183,11 @@ const ResultNumber = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
 `;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  /* width: 100%; */
+`;
 const FormSection2 = ({ setSliderInput }) => {
   const [radioInput, setRadioInput] = useState("option 1");
   const [firstInput, setFirstInput] = useState({ x: 1000 });
@@ -196,6 +202,9 @@ const FormSection2 = ({ setSliderInput }) => {
   };
   const handleOnClick = () => {
     setDisplayResult(1);
+  };
+  const handleOnBack = () => {
+    setDisplayResult(0);
   };
   const pushValues = () => {
     setSliderInput({ radioInput, firstInput, secondInput });
@@ -302,12 +311,21 @@ const FormSection2 = ({ setSliderInput }) => {
             >
               Show Off
             </Button>
-            <Anchor
-              href="#sign-me-up"
-              display={!displayResult ? "none" : "flex"}
-            >
-              <Button>Sign Me Up</Button>
-            </Anchor>
+            <ButtonContainer>
+              <Button
+                onClick={handleOnBack}
+                type="submit"
+                display={displayResult ? "flex" : "none"}
+              >
+                Go back
+              </Button>
+              <Anchor
+                href="#sign-me-up"
+                display={!displayResult ? "none" : "flex"}
+              >
+                <Button>Sign Me Up</Button>
+              </Anchor>
+            </ButtonContainer>
           </FormContainer>
         </FormWrapper>
       </Wrapper>
