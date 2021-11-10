@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Logo } from "../data";
 
 const Container = styled.div`
   /* height: 20vh; */
@@ -35,7 +34,7 @@ const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <Img src={Logo} />
+        <Img src="/fint-logo.png" />
         <Contact>
           <p>Email: kush@fint.money</p>
           <p>Contact no: 9424758397</p>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Logo } from "../data";
+
 const Container = styled.div`
   z-index: 99;
   background-color: ${(props) => props.bg};
@@ -15,7 +15,7 @@ const Img = styled.img`
 const Header = ({ bg }) => {
   return (
     <Container bg={bg}>
-      <Img src={Logo} alt="logo" />
+      <Img src="/fint-logo.png" alt="logo" />
     </Container>
   );
 };
