@@ -178,8 +178,10 @@ const LeaderBoard2 = () => {
       {userIndex > 5 && (
         <div>
           <UserInfo>
-            Out of {leadersValue.size} sign-ups on the waitlist, your rank is{" "}
-            {userIndex + 30}
+            Out of {leadersValue.size + 250} sign-ups on the waitlist, your rank
+            is {userIndex + 30} <br />
+            You have access to{" "}
+            {leadersValue.docs[userIndex].data().referCount * 10} Points
           </UserInfo>
         </div>
       )}

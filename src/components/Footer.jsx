@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 80%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Img = styled.img`
-  width: 120px;
+  width: 100px;
 `;
 const Contact = styled.div``;
 const Copyrights = styled.p`

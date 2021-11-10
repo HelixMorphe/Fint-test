@@ -1,11 +1,15 @@
 import styled from "styled-components";
-
+import devices from "../breakpoints";
 const Container = styled.div`
   z-index: 99;
   background-color: ${(props) => props.bg};
   height: 15vh;
   top: 0;
-  padding: 0px 3rem;
+  padding: 0px 1rem;
+
+  @media ${devices.m} {
+    padding: 0 3rem;
+  }
 `;
 
 const Img = styled.img`
