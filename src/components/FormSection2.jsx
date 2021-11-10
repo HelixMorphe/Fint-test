@@ -157,6 +157,7 @@ const ResultContainer = styled.div`
   position: relative;
   background-image: url("/graph.jpeg");
   background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
