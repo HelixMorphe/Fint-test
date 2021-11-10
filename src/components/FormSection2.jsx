@@ -192,7 +192,7 @@ const FormSection2 = ({ setSliderInput }) => {
     const ratio = ~~(firstInput.x / secondInput.x);
     if (ratio < 4) {
       return `${ratio} weeks`;
-    } else return `${ratio / 4} months`;
+    } else return `${~~(ratio / 4)} months`;
   };
   const handleOnClick = () => {
     setDisplayResult(1);
