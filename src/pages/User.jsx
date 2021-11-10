@@ -86,7 +86,7 @@ const Anchor = styled.a`
   }
 `;
 const UserPage = () => {
-  const link = `whatsapp://send?text=%20Hey!%20I%20am%20inviting%20you%20to%20join%20me%20on%20this%20amazing%20app%20for%20achieving%20your%20financial%20goals.Open%20this%20link%20and%20help%20me%20get%20more%20Fint%20Coins%20-%20http://fint.money/referredBy=${
+  const link = `whatsapp://send?text=%20Hey!%20I%20am%20inviting%20you%20to%20join%20me%20on%20this%20amazing%20app%20for%20achieving%20your%20financial%20goals.Open%20this%20link%20and%20help%20me%20get%20more%20Fint%20Coins%20-%20http://fint.money?referredBy=${
     useParams().userId
   }`;
   return (

@@ -276,7 +276,7 @@ const FormSection2 = ({ setSliderInput }) => {
                 </RadioOption>
               </RadioContainer>
               <Option>
-                <Label>What's you're budget?</Label>
+                <Label>What's your budget for it?</Label>
                 <SliderContainer>
                   <Slider
                     xmin={10000}
@@ -291,7 +291,7 @@ const FormSection2 = ({ setSliderInput }) => {
                 </SliderContainer>
               </Option>
               <Option>
-                <Label>How much are you saving?</Label>
+                <Label>How much is your monthly savings?</Label>
                 <SliderContainer>
                   <Slider
                     xmin={1000}

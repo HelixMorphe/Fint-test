@@ -29,7 +29,7 @@ const Button = styled.button`
 `;
 const ClipBoard = () => {
   const [state, setState] = useState({
-    value: `http://fint.money/home?referredBy=${useParams().userId}`,
+    value: `http://fint.money?referredBy=${useParams().userId}`,
     copied: false,
   });
 
