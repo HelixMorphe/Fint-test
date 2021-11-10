@@ -190,7 +190,7 @@ const ButtonContainer = styled.div`
 `;
 const FormSection2 = ({ setSliderInput }) => {
   const [radioInput, setRadioInput] = useState("option 1");
-  const [firstInput, setFirstInput] = useState({ x: 1000 });
+  const [firstInput, setFirstInput] = useState({ x: 10000 });
   const [secondInput, setSecondInput] = useState({ x: 1000 });
   const [displayResult, setDisplayResult] = useState(0);
 
@@ -200,14 +200,22 @@ const FormSection2 = ({ setSliderInput }) => {
       return `${ratio} weeks`;
     } else return `${~~(ratio / 4)} months`;
   };
-  const handleOnClick = () => {
-    setDisplayResult(1);
-  };
+
   const handleOnBack = () => {
     setDisplayResult(0);
   };
   const pushValues = () => {
     setSliderInput({ radioInput, firstInput, secondInput });
+    console.log({
+      radioInput,
+      firstInput,
+      secondInput,
+    });
+  };
+  const handleOnClick = (event) => {
+    setDisplayResult(1);
+    event.preventDefault();
+    pushValues();
   };
   const handleRadioChange = (e) => {
     setRadioInput(e.target.value);
@@ -314,7 +322,7 @@ const FormSection2 = ({ setSliderInput }) => {
             <ButtonContainer>
               <Button
                 onClick={handleOnBack}
-                type="submit"
+                // type="submit"
                 display={displayResult ? "flex" : "none"}
               >
                 Go back
