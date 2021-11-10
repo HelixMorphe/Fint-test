@@ -155,7 +155,7 @@ const RadioOption = styled.div`
 const ResultContainer = styled.div`
   height: 50vh;
   position: relative;
-  background-image: url(http://fint.money/images/check2.png);
+  background-image: url("/graph.jpeg");
   background-size: cover;
   display: flex;
   align-items: center;

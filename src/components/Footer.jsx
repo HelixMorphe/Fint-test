@@ -55,7 +55,24 @@ const Right = styled.div`
 const Img = styled.img`
   width: 100px;
 `;
-
+const Anchor = styled.a`
+  &:link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
 const SocialMediaContainer = styled.div`
   display: flex;
 
@@ -112,16 +129,33 @@ const Footer = () => {
           <Img src="/fint-logo.png" />
           <SocialMediaContainer>
             <SocialMedia>
-              <Instagram />
+              <Anchor
+                href="https://www.instagram.com/fintmoney/"
+                target="_blank"
+              >
+                <Instagram />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <LinkedIn />
+              <Anchor
+                href="https://www.linkedin.com/company/fintmoney/"
+                target="_blank"
+              >
+                <LinkedIn />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <Facebook />
+              <Anchor
+                href="https://www.facebook.com/Fintmoney/"
+                target="_blank"
+              >
+                <Facebook />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <Twitter />
+              <Anchor href="https://twitter.com/fintmoney" target="_blank">
+                <Twitter />
+              </Anchor>
             </SocialMedia>
           </SocialMediaContainer>
           <DescContainer>
@@ -159,16 +193,33 @@ const Footer = () => {
           </ContactContainerRight>
           <SocialMediaContainerRight>
             <SocialMedia>
-              <Instagram />
+              <Anchor
+                href="https://www.instagram.com/fintmoney/"
+                target="_blank"
+              >
+                <Instagram />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <LinkedIn />
+              <Anchor
+                href="https://www.linkedin.com/company/fintmoney/"
+                target="_blank"
+              >
+                <LinkedIn />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <Facebook />
+              <Anchor
+                href="https://www.facebook.com/Fintmoney/"
+                target="_blank"
+              >
+                <Facebook />
+              </Anchor>
             </SocialMedia>
             <SocialMedia>
-              <Twitter />
+              <Anchor href="https://twitter.com/fintmoney" target="_blank">
+                <Twitter />
+              </Anchor>
             </SocialMedia>
           </SocialMediaContainerRight>
         </Right>
