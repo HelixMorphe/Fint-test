@@ -193,7 +193,8 @@ const LeaderBoard2 = () => {
             Out of {leadersValue.size + 250} sign-ups on the waitlist, your rank
             is {userIndex + 30} <br />
             You have access to{" "}
-            {(leadersValue.docs[userIndex].data().referCount + 1) * 10} Points
+            {(leadersValue.docs[userIndex].data().referCount + 1) * 10} Fint
+            Coins.
           </UserInfo>
         </div>
       )}
