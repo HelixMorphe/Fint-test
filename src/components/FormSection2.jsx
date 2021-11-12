@@ -314,7 +314,7 @@ const FormSection2 = ({ setSliderInput }) => {
               type="submit"
               display={displayResult ? "none" : "flex"}
             >
-              Show Off
+              Submit
             </Button>
             <ButtonContainer>
               <Button
@@ -322,13 +322,13 @@ const FormSection2 = ({ setSliderInput }) => {
                 // type="submit"
                 display={displayResult ? "flex" : "none"}
               >
-                Go back
+                BACK
               </Button>
               <Anchor
                 href="#sign-me-up"
                 display={!displayResult ? "none" : "flex"}
               >
-                <Button>Sign Me Up</Button>
+                <Button>SIGN UP</Button>
               </Anchor>
             </ButtonContainer>
           </FormContainer>

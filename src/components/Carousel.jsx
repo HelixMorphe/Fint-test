@@ -67,7 +67,7 @@ const CarouselWrapper = () => {
             <Image src="/Image3.png" />
             <ImageTitle>Invest</ImageTitle>
             <ImageContent>
-              Personalized and dynamic assets with high growth potential fot
+              Personalized and dynamic assets with high growth potential for
               near-term goals.
             </ImageContent>
           </ItemContent>
