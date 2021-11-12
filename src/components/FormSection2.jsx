@@ -234,7 +234,7 @@ const FormSection2 = ({ setSliderInput }) => {
         <FormWrapper>
           <FormContainer>
             <Title display={displayResult ? "none" : "flex"}>
-              Let us know your goals.
+              Tell us your goals for this new year(2022)
             </Title>
             <Form
               onSubmit={handleSubmit}
@@ -307,10 +307,7 @@ const FormSection2 = ({ setSliderInput }) => {
               </Option>
             </Form>
             <ResultContainer displayResult={displayResult}>
-              <Result>
-                We Will help you acheive this goal in
-                <br /> <ResultNumber>{resultCalc()}.</ResultNumber>
-              </Result>
+              <Result>With Fint, acheive your goal efficiently</Result>
             </ResultContainer>
             <Button
               onClick={handleOnClick}

@@ -67,8 +67,8 @@ const CarouselWrapper = () => {
             <Image src="/Image3.png" />
             <ImageTitle>Invest</ImageTitle>
             <ImageContent>
-              Personalized according to your needs. It’s your money,so we
-              believe that the decision making power should be in your hands.
+              Personalized and dynamic assets with high growth potential fot
+              near-term goals.
             </ImageContent>
           </ItemContent>
         </Item>
@@ -77,8 +77,7 @@ const CarouselWrapper = () => {
             <Image src="/Image2.png" />
             <ImageTitle>Earn</ImageTitle>
             <ImageContent>
-              Earn up to 20% cashback Rewards, reinvest to give yourself a pat
-              on the back.
+              Now is the right time to make your money work for you.
             </ImageContent>
           </ItemContent>
         </Item>
@@ -87,8 +86,8 @@ const CarouselWrapper = () => {
             <Image src="/Image1.png" />
             <ImageTitle>Celebrate</ImageTitle>
             <ImageContent>
-              Crush your financial goals and say goodbye to the feeling of FOMO.
-              It’s your time to show off on insta 😛
+              Crush your financial goals by taking control of your wealth
+              creation 💰.
             </ImageContent>
           </ItemContent>
         </Item>
