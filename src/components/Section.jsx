@@ -110,9 +110,8 @@ const Section = () => {
         <Hero>
           <Title>Your Google Maps for Money.</Title>
           <SubTitle>
-            We not only smartly allocate your capital- we co-create seamless
-            investing experience.
-            <br /> Crush your financial goals with us.
+            Portfolio Co-creation | Smart Capital Allocation | Personalized
+            Assets Suggestions for <br /> 100M+ young millennials
           </SubTitle>
           <ButtonContainer>
             <Button href="#form-section">Join Us</Button>
