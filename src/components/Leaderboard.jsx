@@ -156,13 +156,13 @@ const LeaderBoard2 = () => {
       </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
-        leadersValue.docs.slice(0, 5).map((doc, index) => {
+        leadersValue.docs.slice(0, 4).map((doc, index) => {
           if (index === userIndex)
             return (
               <MyRank key={doc.id}>
                 <Index>{userIndex + 1}</Index>
                 <Name>{doc.data().fullName}</Name>
-                <Points>{doc.data().referCount * 10}</Points>
+                <Points>{(doc.data().referCount + 1) * 10}</Points>
               </MyRank>
             );
           else {
@@ -170,18 +170,30 @@ const LeaderBoard2 = () => {
               <Rank key={doc.id}>
                 <Index>{index + 1}</Index>
                 <Name>{doc.data().fullName}</Name>
-                <Points>{doc.data().referCount * 10}</Points>
+                <Points>{(doc.data().referCount + 1) * 10}</Points>
               </Rank>
             );
           }
         })}
-      {userIndex > 4 && (
+      {userIndex > 3 && (
         <div>
+          <Rank>
+            <Index>...</Index>
+            <Name>...</Name>
+            <Points>...</Points>
+          </Rank>
+          <MyRank>
+            <Index>{userIndex + 30}</Index>
+            <Name>{leadersValue.docs[userIndex].data().fullName}</Name>
+            <Points>
+              {(leadersValue.docs[userIndex].data().referCount + 1) * 10}
+            </Points>
+          </MyRank>
           <UserInfo>
             Out of {leadersValue.size + 250} sign-ups on the waitlist, your rank
             is {userIndex + 30} <br />
             You have access to{" "}
-            {leadersValue.docs[userIndex].data().referCount * 10} Points
+            {(leadersValue.docs[userIndex].data().referCount + 1) * 10} Points
           </UserInfo>
         </div>
       )}
