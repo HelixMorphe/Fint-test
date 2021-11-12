@@ -156,7 +156,7 @@ const LeaderBoard2 = () => {
       </SubHeadings>
       {leadersLoading && <div>Loading ...</div>}
       {leadersValue &&
-        leadersValue.docs.slice(0, 4).map((doc, index) => {
+        leadersValue.docs.slice(0, 3).map((doc, index) => {
           if (index === userIndex)
             return (
               <MyRank key={doc.id}>
