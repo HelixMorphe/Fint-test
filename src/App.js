@@ -5,10 +5,10 @@ import Header from "./components/Header";
 import ReactGa from "react-ga";
 function App() {
   useEffect(() => {
-    ReactGa.initialize("G-M6F67TDY0M");
+    ReactGa.initialize("UA-212838462-1");
     //to report page views
 
-    ReactGa.pageview("/");
+    ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
     <div>
