@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import devices from "../breakpoints";
-import LeaderBoardFooter from "./LeaderBoardFooter";
 import { db } from "../firebase";
-import {
-  collection,
-  doc,
-  getDocs,
-  getDoc,
-  query,
-  where,
-  orderBy,
-  limit,
-} from "firebase/firestore";
+import { collection, doc, getDoc, query, orderBy } from "firebase/firestore";
 
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useParams } from "react-router-dom";
-import ClipBoard from "./ClipBoard";
 
 const Container = styled.div`
   border-radius: 1rem;
