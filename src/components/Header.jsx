@@ -52,7 +52,12 @@ const Img = styled.img`
   width: 100px;
 `;
 
-const LeaderBoardButton = styled.h1`
+const LeaderBoardButton = styled.button`
+  background-color: rgb(69, 107, 242);
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0.25rem;
   color: rgba(255, 255, 255, 0.9);
   font-size: 20px;
   cursor: pointer;
