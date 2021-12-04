@@ -1,11 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import devices from "../breakpoints";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import LeaderBoardModal from "./LeaderBoardModal";
+import Sidebar from "./SideBar/Sidebar";
+
 
 const style = {
   position: "absolute",
@@ -67,14 +64,27 @@ const LeaderBoardButton = styled.button`
   }
 `;
 
+const Icon = styled.svg`
+  cursor: pointer;
+`;
+
 const Header = ({ bg }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [menu, setMenu] = useState(false);
+  const handleOpenMenu = () => setMenu(!menu);
   return (
     <Container bg={bg}>
       <Img src="/fint-logo.png" alt="logo" />
-      <Modal
+      <div>
+        <Icon onClick={() => handleOpenMenu()} width="40" height="40" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52.4268 30.095H17.0947" stroke="#C0C0C0" stroke-width="5.04744" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M52.427 20H7" stroke="#C0C0C0" stroke-width="5.04744" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M52.427 40.1897H7" stroke="#C0C0C0" stroke-width="5.04744" stroke-linecap="round" stroke-linejoin="round" />
+        </Icon>
+        {
+          menu ? <Sidebar setMenu={setMenu} /> : null
+        }
+      </div>
+      {/* <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -84,7 +94,7 @@ const Header = ({ bg }) => {
           <LeaderBoardModal />
         </BoxContainer>
       </Modal>
-      <LeaderBoardButton onClick={handleOpen}>Leaderboard</LeaderBoardButton>
+      <LeaderBoardButton onClick={handleOpen}>Leaderboard</LeaderBoardButton> */}
     </Container>
   );
 };
