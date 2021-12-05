@@ -60,8 +60,7 @@ export const InputSection = ({ sliderInput }) => {
           <FormInput sliderInput={sliderInput} />
         </FormContainer>
         <Title>
-          We will send you a personalized portfolio insights to make you achieve
-          your goal efficiently for <Span>Free!</Span>
+          Get your personalized insights and start building your wealth portfolio. This is the right time to start achieving your goals!
         </Title>
       </Wrapper>
     </Container>
