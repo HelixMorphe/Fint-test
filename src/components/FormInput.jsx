@@ -13,7 +13,8 @@ import {
 } from "firebase/firestore";
 
 const Container = styled.div`
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: 0px 15px 37.83px rgba(0, 0, 0, 0.10);
 
   width: 70%;
   max-width: 500px;
@@ -40,7 +41,8 @@ const Input = styled.input`
 `;
 const InputButton = styled.input`
   margin: auto;
-  width: 50%;
+  width: 80%;
+  max-width: 300px;
   outline: none;
   margin-top: 0.625rem;
   padding: 10px 15px;

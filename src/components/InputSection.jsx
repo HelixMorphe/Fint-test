@@ -29,7 +29,7 @@ const Title = styled.h3`
   margin-top: 2rem;
   @media ${devices.m} {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: left;
   }
 `;

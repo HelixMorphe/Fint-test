@@ -46,7 +46,7 @@ const CarouselWrapper = () => {
   `;
   const ItemContent = styled.div`
     color: white;
-    padding: 2rem;
+    margin : 4rem;
     text-align: center;
     height: 250px;
     display: flex;

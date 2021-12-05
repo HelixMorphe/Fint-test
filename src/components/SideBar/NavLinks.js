@@ -6,12 +6,17 @@ const NavLinks = [
   },
   {
     id: 2,
-    link: "About Us",
+    link: "LeaderBoard",
     //     url: "SearchCampaign",
   },
   {
     id: 3,
-    link: "contact",
+    link: "About Us",
+    //     url: "contact",
+  },
+  {
+    id: 4,
+    link: "Contact",
     //     url: "contact",
   },
 ];
