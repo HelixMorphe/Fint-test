@@ -26,7 +26,7 @@ function Sidebar({ setMenu }) {
   return (
     <Sidebar className="absolute right-0 top-0 flex flex-col space-y-6 w-full max-w-xs  h-full p-6 pt-9   bg-[#191919]  ">
       <Close
-        className="  ml-auto mr-4 cursor-pointer   "
+        className="ml-auto mr-4 cursor-pointer"
         onClick={() => setMenu(false)}
         sx={{ color: grey[500], fontSize: 35 }}
       />
