@@ -118,7 +118,10 @@ const LeaderBoard2 = () => {
 
   useEffect(() => {
     findUser();
-  }, []);
+    return () => {
+      findUser();
+   };
+  },)
 
   const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
   const [leadersValue, leadersLoading] = useCollection(q1, {});
