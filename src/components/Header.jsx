@@ -3,33 +3,6 @@ import styled from "styled-components";
 import devices from "../breakpoints";
 import Sidebar from "./SideBar/Sidebar";
 
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 1000,
-  bgcolor: "background.paper",
-  border: "2px solid #fff",
-  boxShadow: 24,
-  p: 4,
-  outline: 0,
-};
-
-const BoxContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
-  background-color: white;
-  /* padding: 24px; */
-  outline: 0;
-`;
-
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -47,21 +20,6 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100px;
-`;
-
-const LeaderBoardButton = styled.button`
-  background-color: rgb(69, 107, 242);
-  outline: none;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 0.25rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 20px;
-  cursor: pointer;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.95);
-  }
 `;
 
 const Icon = styled.svg`

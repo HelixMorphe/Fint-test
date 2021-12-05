@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import devices from "../breakpoints";
-import { HeroImage } from "../data";
 const Container = styled.div`
   min-height: 85vh;
   background-color: #121212;

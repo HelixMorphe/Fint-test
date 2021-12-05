@@ -140,7 +140,6 @@ const RadioContainer = styled.div`
   width: 100%;
   margin-bottom: 2rem;
 `;
-const RadioTitle = styled.h2``;
 const RadioInput = styled.input`
   display: flex;
 `;
@@ -179,10 +178,7 @@ const Result = styled.p`
   color: black;
 `;
 
-const ResultNumber = styled.p`
-  font-size: 1.5rem;
-  font-weight: 700;
-`;
+
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -193,13 +189,6 @@ const FormSection2 = ({ setSliderInput }) => {
   const [firstInput, setFirstInput] = useState({ x: 10000 });
   const [secondInput, setSecondInput] = useState({ x: 1000 });
   const [displayResult, setDisplayResult] = useState(0);
-
-  const resultCalc = () => {
-    const ratio = ~~(firstInput.x / secondInput.x);
-    if (ratio <= 4) {
-      return `${ratio * 4} weeks`;
-    } else return `${~~ratio - 1} months`;
-  };
 
   const handleOnBack = () => {
     setDisplayResult(0);

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import FormInput from "./FormInput";
 import devices from "../breakpoints";
@@ -34,14 +33,7 @@ const Title = styled.h3`
     text-align: left;
   }
 `;
-const Span = styled.span`
-  font-size: 1.25rem;
-  @media ${devices.m} {
-    font-size: 2.5rem;
-  }
-  /* font-size: 2.5rem; */
-  color: #f5a623;
-`;
+
 const FormContainer = styled.div`
   flex: 1;
   width: 100%;

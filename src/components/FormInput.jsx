@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import styled from "styled-components";
 import { db } from "../firebase";
 import { useSearchParams, useNavigate } from "react-router-dom";
@@ -7,7 +7,6 @@ import {
   collection,
   doc,
   getDoc,
-  getDocs,
   setDoc,
   updateDoc,
   arrayUnion,
@@ -49,13 +48,7 @@ const InputButton = styled.input`
   border: none;
   border-radius: 0.5rem;
 `;
-const Label = styled.p`
-  font-size: 12px;
-  color: gray;
-  padding: 0 15px;
-  width: 80%;
-  max-width: 300px;
-`;
+
 
 const Desclaimer = styled.p`
   text-align: center;
@@ -65,7 +58,7 @@ const Desclaimer = styled.p`
 `;
 const FormInput = ({ sliderInput }) => {
   let navigate = useNavigate();
-  let [searchParams, setSearchParams] = useSearchParams();
+  let [searchParams] = useSearchParams();
   const referredBy = searchParams.get("referredBy");
 
   var initialFieldValues = {

@@ -107,7 +107,6 @@ const UserInfo = styled.div`
 `;
 const LeaderBoard2 = () => {
   const [userExists, setUserExists] = useState(false);
-  const [user, setUser] = useState(false);
   const usersCollectionRef = collection(db, "users");
   //   const currentUserRef = doc(usersCollectionRef)
   const params = useParams();
@@ -115,7 +114,6 @@ const LeaderBoard2 = () => {
     const docRef = doc(db, "users", params.userId);
     const findCurrentUser = await getDoc(docRef);
     setUserExists(findCurrentUser.exists());
-    // setUser()
   };
 
   useEffect(() => {
@@ -123,7 +121,7 @@ const LeaderBoard2 = () => {
   }, []);
 
   const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
-  const [leadersValue, leadersLoading, leadersError] = useCollection(q1, {});
+  const [leadersValue, leadersLoading] = useCollection(q1, {});
   if (!leadersLoading && userExists) {
     console.log(leadersValue);
     var userIndex = leadersValue.docs.findIndex(

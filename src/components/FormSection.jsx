@@ -1,5 +1,4 @@
 import Slider from "react-input-slider";
-import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import devices from "../breakpoints";
@@ -57,7 +56,6 @@ const FormContainer = styled.div`
 `;
 
 const OptionsContainer = styled.div``;
-const OptionsTitle = styled.h3``;
 const Option = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,14 +66,7 @@ const InputContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Input = styled.input`
-  cursor: pointer;
-  padding: 10px 15px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 0.5rem;
-`;
+
 const Label = styled.label``;
 const Line = styled.div`
   /* border-top: 0.5px solid blue; */

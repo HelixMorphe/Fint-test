@@ -2,7 +2,6 @@ import { useState } from "react";
 import Section from "../components/Section";
 import Header from "../components/Header";
 import styled from "styled-components";
-import FormSection from "../components/FormSection";
 import { InputSection } from "../components/InputSection";
 import Footer from "../components/Footer";
 import FormSection2 from "../components/FormSection2";

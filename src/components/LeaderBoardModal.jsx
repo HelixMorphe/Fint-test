@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 import { collection, query, orderBy } from "@firebase/firestore";
@@ -84,7 +83,7 @@ const LeaderBoardModal = () => {
   const usersCollectionRef = collection(db, "users");
 
   const q1 = query(usersCollectionRef, orderBy("referCount", "desc"));
-  const [leadersValue, leadersLoading, leadersError] = useCollection(q1, {});
+  const [leadersValue, leadersLoading] = useCollection(q1, {});
   if (!leadersLoading) {
     console.log(leadersValue.docs[0].data());
   }
